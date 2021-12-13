@@ -1,0 +1,147 @@
+// import 'dart:js';
+
+import 'package:flutter/material.dart';
+// import 'package:google_fonts/google_fonts.dart';
+
+
+void main(){
+  runApp(MaterialApp(
+    home: MyApp(),
+    title: "alok",
+  ));
+}
+class MyApp extends StatefulWidget{
+  @override
+  State<StatefulWidget> createState(){
+    return MyAppState();
+  }
+}
+
+class MyAppState extends State<MyApp>{
+  // bool switchValue = false;
+  @override
+  Widget build(BuildContext context){
+    return Scaffold(
+      appBar: AppBar(title: Text("Dark_Theme"),
+      actions: <Widget>[
+        IconButton(
+          onPressed: (){
+            showSearch(context: context, delegate: DataSearch());
+            // ()=> Navigator.push(context, MaterialPageRoute(builder: (context)=> DataSearch()));
+          },
+          iconSize: 20,
+          icon: Icon(Icons.search
+          )
+          )
+          ],
+      ),
+      
+    );
+  }
+}
+class DataSearch extends SearchDelegate<String>{
+  final cities = [
+    "Alok",
+    // "Alok",
+    // "Alok",
+    "Mayank",
+    "Aryan",
+    "Piyush",
+    "Govind",
+    "Chilkoti",
+    "Kisan",
+    "Anurag",
+    "Virat",
+    "Bandra",
+    "Sri lanka ",
+    "Tamil Nadu",
+    "Bihar",
+    "Himachal pradesh ",
+    "West Bengal",
+    "china",
+    "Austrai",
+    "africa",
+    "Vienna ",
+    "Us",
+    "New york",
+    "canada",
+    "albama",
+    "Pakistan",
+    "Bali",
+    "Sweden",
+    "Kashmir",
+    "Shimla",
+    "Noida",
+    "Mumbai",
+    "Delhi",
+    "Anmol",
+
+  ];
+  final recentCities = [
+    "albama",
+    "Pakistan",
+    "Bali",
+    "Sweden",
+    "Kashmir",
+    "Shimla",
+    "Noida",
+    
+
+  ];
+  @override
+  List<Widget>? buildActions(BuildContext context) {
+    // action for app bar 
+    return [
+      IconButton(onPressed: (){
+        query = '';
+      }, icon: Icon(Icons.clear
+      ))
+
+    ];
+
+  }
+
+  @override
+  Widget? buildLeading(BuildContext context) {
+    // leading icons 
+    return IconButton(
+      onPressed: (){
+        // close(context, );
+      // close(context,
+      //  null);
+    },
+    icon: Icon(Icons.arrow_back));
+    
+  }
+
+  @override
+  Widget buildResults(BuildContext context) {
+    // TODO: build results 
+    return Card(
+      color:  Colors.blue,
+      child: Center(child: Text("Searched", style: TextStyle(fontSize: 30),
+      ),
+      ),
+    );
+  }
+
+  @override
+  Widget buildSuggestions(BuildContext context) {
+    // TODO: show when someone 
+
+    // final suggestionList = query.isEmpty?recentCities:cities;
+
+    final suggestionList = query.isEmpty?recentCities:cities.where((p)=> p.startsWith(query)).toList();
+
+    return ListView.builder(itemBuilder: (context,index)=> ListTile(
+      onTap: (){
+        showResults(context);
+      },
+      title: Text(suggestionList[index]
+      ),
+    ),
+    
+    itemCount: suggestionList.length
+    );
+}
+  }

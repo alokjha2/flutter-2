@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "136173553659",
+    "project_id": "sweden-80886",
+    "storage_bucket": "sweden-80886.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:136173553659:android:c5fb46b9cd04f0cf9b6d5e",
+        "android_client_info": {
+          "package_name": "com.example.demo"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "136173553659-hu07t4ucmipt885f4uhl0mjvtm9cdvjn.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAzyLkCpssx5y4sqXx8k_CFMsbvJkry890"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "136173553659-hu07t4ucmipt885f4uhl0mjvtm9cdvjn.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
